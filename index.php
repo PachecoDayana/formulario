@@ -1,15 +1,6 @@
 <?php
 
-require _DIR_ . '/./vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->safeload();
-
-$connect = mysqli_connect(
-    $_ENV['DB_HOST'],
-    $_ENV['DB_USER'],
-    $_ENV['DB_PASS'],
-    $_ENV['DB_DBNAME'],
-);
+$connect = mysqli_connect('localhost', '', '', '');
 
 $empleados_soporteTecnico= array("Jaime Rubiano", "Maria Garcia", "Pedro Sanchez", "Arley Ramirez");
 $empleado_escogido_randonomicamente = $empleados_soporteTecnico[array_rand($empleados_soporteTecnico, 1)];
